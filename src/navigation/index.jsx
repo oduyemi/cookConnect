@@ -9,6 +9,7 @@ import Profile from "../pages/Profile";
 import Users from "../pages/Users";
 import RecipePost from "../pages/RecipePost";
 import MyRecipe from "../pages/MyRecipe";
+import Verify from "../pages/Verify";
 
 
 
@@ -25,7 +26,7 @@ const Navigation = () => {
                     <Route path="/recipe" element={<Recipe />} />
                     <Route path="/users" element={<Users />} />
                     <Route path="/recipe/new" element={<RecipePost />} />
-                    <Route path="/recipe/my-recipe" element={<MyRecipe />} />
+                    <Route path="/verify" element={<Verify />} />
                     
                 </Routes>
            
