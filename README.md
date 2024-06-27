@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# CookConnect
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+CookConnect is a web application designed to connect cooking enthusiasts and recipe lovers. It provides a platform for users to discover, share, and explore various recipes.
 
-In the project directory, you can run:
+## Technologies Used
 
-### `npm start`
+- **React**: JavaScript library for building user interfaces.
+- **Material-UI (MUI)**: React components for faster and easier web development.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Animate.css**: Library for adding animations to elements.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. User Authentication
 
-### `npm test`
+- **Login and Registration**: Users can create accounts and log in securely.
+- **Password Reset**: Option to reset passwords via email verification.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Recipe Management
 
-### `npm run build`
+- **Create**: Users can add new recipes, including title, description, ingredients, instructions, and images.
+- **Read**: Display recipes with details and images.
+- **Update**: Edit existing recipes.
+- **Delete**: Remove recipes that users have added.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. User Profile
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **View Profile**: Users can see their profile information.
+- **Edit Profile**: Option to update profile details.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4. Social Features
 
-### `npm run eject`
+- **Likes and Comments**: Users can interact with recipes by liking and commenting on them.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 5. Responsive Design
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Ensures a seamless experience across various devices and screen sizes.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+- Node.js and npm installed on your machine.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Steps
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the repository from GitHub.
+   
+   ```bash
+   git clone https://github.com/your-repository.git
+   cd cookconnect
+   ```
 
-### Code Splitting
+2. Install dependencies.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   npm install
+   ```
 
-### Analyzing the Bundle Size
+3. Start the development server.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```bash
+   npm start
+   ```
 
-### Making a Progressive Web App
+4. Open your browser and navigate to `http://localhost:3000` to view CookConnect.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Folder Structure
 
-### Advanced Configuration
+- **src/**
+  - **components/**: Reusable React components.
+  - **pages/**: Individual pages of the application.
+  - **assets/**: Images, fonts, or other static assets.
+  - **styles/**: CSS or styling files.
+  - **services/**: Backend API integration or utility functions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Future Enhancements
 
-### Deployment
+- Implement user roles (admin, regular user).
+- Add advanced search and filtering for recipes.
+- Integrate additional social sharing features.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Contributing
 
-### `npm run build` fails to minify
+Contributions are welcome! Fork the repository, make your changes, and submit a pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](link-to-license-file) file for details.
+
+---
+
+This documentation provides a structured overview of the CookConnect frontend application, covering its technologies, features, installation instructions, folder structure, and more.
