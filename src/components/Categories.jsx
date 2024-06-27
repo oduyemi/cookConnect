@@ -62,7 +62,7 @@ export const Categories = () => {
           <Box className="row">
             <Box className="col-lg-8 col-md-8">
               <Box className="categories__post__item categories__post__item--large">
-                <Box className="categories__post__item__pic set-bg" data-setbg={require("../assets/images/r2.jpg")}>
+                <Box className="categories__post__item__pic set-bg" data-setbg={require("../assets/images/r3.jpg")}>
                   <Box className="post__meta">
                     <h4>08</h4>
                     <span>Aug</span>
@@ -74,13 +74,13 @@ export const Categories = () => {
                     <li>Last name</li>
                   </ul>
                   <h3>
-                    <Link to="#">
+                    <Link to="">
                       Recipe Title
                     </Link>
                   </h3>
                   <ul className="post__widget">
                     <li>
-                      by <span>Admin</span>
+                      follow
                     </li>
                     <li>Likes</li>
                     <li>20 Comments</li>
@@ -88,41 +88,38 @@ export const Categories = () => {
                   <p>
                     Recipe content: Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint ...
                   </p>
-                  <Link to="#" className="primary-btn">
-                    Like icon
-                  </Link>
                 </Box>
               </Box>
               <Box className="row">
                 <Box className="col-lg-6 col-md-6 col-sm-6">
                   <Box className="categories__post__item">
-                    <Box className="categories__post__item__pic small__item set-bg" data-setbg="img/categories/categories-post/cp-2.jpg">
+                    <Box className="categories__post__item__pic small__item set-bg" data-setbg={require("../assets/images/r2.jpg")}>
                       <Box className="post__meta">
                         <h4>08</h4>
                         <span>Aug</span>
                       </Box>
                     </Box>
                     <Box className="categories__post__item__text">
-                      <span className="post__label">Recipe</span>
+                      <span className="post__label">fname lname</span>
                       <h3>
                         <Link to="#">
-                          The Best Weeknight Baked Potatoes, 3 Creative Ways
+                          Recipe Title
                         </Link>
                       </h3>
                       <ul className="post__widget">
                         <li>
-                          by <span>Admin</span>
+                          follow
                         </li>
-                        <li>3 min read</li>
-                        <li>20 Comment</li>
+                        <li>Likes</li>
+                      <li>20 Comments</li>
                       </ul>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua. Quis ipsum suspendisse ultrices gravida...
+                        Recipe content: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua. Quis ipsum suspendisse ultrices gravida...
                       </p>
                     </Box>
                   </Box>
                   <Box className="categories__post__item">
-                    <Box className="categories__post__item__pic set-bg" data-setbg="img/categories/categories-post/cp-4.jpg">
+                    <Box className="categories__post__item__pic set-bg" data-setbg={require("../assets/images/r1.jpg")}>
                       <Box className="post__meta">
                         <h4>08</h4>
                         <span>Aug</span>
@@ -135,34 +132,34 @@ export const Categories = () => {
                       </ul>
                       <h3>
                         <Link to="#">
-                          The Best Grass Stain Remover Is Already In Your Pantry
+                          Recipe Title
                         </Link>
                       </h3>
                       <ul className="post__widget">
                         <li>
-                          by <span>Admin</span>
+                          follow
                         </li>
-                        <li>3 min read</li>
-                        <li>20 Comment</li>
+                        <li>Likes</li>
+                        <li>20 Comments</li>
                       </ul>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua. Quis ipsum suspendisse ultrices gravida...
+                        Recipe Title: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua. Quis ipsum suspendisse ultrices gravida...
                       </p>
                     </Box>
                   </Box>
-                  <Box className="categories__post__item__plain set-bg" data-setbg="img/categories/categories-post/cp-6.jpg">
+                  <Box className="categories__post__item__plain set-bg" data-setbg={require("../assets/images/r2.jpg")}>
                     <Box className="categories__post__item__text">
                       <Box className="post__meta">
                         <h4>08</h4>
                         <span>Aug</span>
                       </Box>
                       <ul className="post__label--large">
-                        <li>Vegan</li>
-                        <li>Desserts</li>
+                        <li>fname</li>
+                        <li>lname</li>
                       </ul>
                       <h3>
                         <Link to="#">
-                          This Summer Snacking Cake Is theSweetest Excuse to...
+                          Recipe Title
                         </Link>
                       </h3>
                       <Box className="post__social">
@@ -180,58 +177,58 @@ export const Categories = () => {
                     </Box>
                   </Box>
                   <Box className="categories__post__item">
-                    <Box className="categories__post__item__pic smaller__large set-bg" data-setbg="img/categories/categories-post/cp-8.jpg">
+                    <Box className="categories__post__item__pic smaller__large set-bg" data-setbg={require("../assets/images/r2.jpg")}>
                       <Box className="post__meta">
                         <h4>08</h4>
                         <span>Aug</span>
                       </Box>
                     </Box>
                     <Box className="categories__post__item__text">
-                      <span className="post__label">Smoothie</span>
+                      <span className="post__label">fname lnamr</span>
                       <h3>
                         <Link to="#">
-                          This 2-Ingredient Spread Makes Any Egg Sandwich So Much Better
+                          Title
                         </Link>
                       </h3>
                       <ul className="post__widget">
                         <li>
-                          by <span>Admin</span>
+                          follow
                         </li>
-                        <li>3 min read</li>
-                        <li>20 Comment</li>
+                        <li>Likes</li>
+                        <li>20 Comments</li>
                       </ul>
                     </Box>
                   </Box>
                 </Box>
                 <Box className="col-lg-6 col-md-6 col-sm-6">
                   <Box className="categories__post__item">
-                    <Box className="categories__post__item__pic set-bg" data-setbg="img/categories/categories-post/cp-3.jpg">
+                    <Box className="categories__post__item__pic set-bg" data-setbg={require("../assets/images/r3.jpg")}>
                       <Box className="post__meta">
                         <h4>08</h4>
                         <span>Aug</span>
                       </Box>
                     </Box>
                     <Box className="categories__post__item__text">
-                      <span className="post__label">Recipe</span>
+                      <span className="post__label">fname lname</span>
                       <h3>
                         <Link to="#">
-                          Our Best Tips for Cooking Flawless, Perfect Pork
+                          Title
                         </Link>
                       </h3>
                       <ul className="post__widget">
                         <li>
-                          by <span>Admin</span>
+                         follow
                         </li>
-                        <li>3 min read</li>
-                        <li>20 Comment</li>
+                          <li>Likes</li>
+                          <li>20 Comments</li>
                       </ul>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua. Quis ipsum suspendisse ultrices gravida...
+                        Recipe Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua. Quis ipsum suspendisse ultrices gravida...
                       </p>
                     </Box>
                   </Box>
                   <Box className="categories__post__item">
-                    <Box className="categories__post__item__pic small__item set-bg" data-setbg="img/categories/categories-post/cp-5.jpg">
+                    <Box className="categories__post__item__pic small__item set-bg" data-setbg={require("../assets/images/r1.jpg")}>
                       <Box className="post__meta">
                         <h4>08</h4>
                         <span>Aug</span>
@@ -246,10 +243,10 @@ export const Categories = () => {
                       </h3>
                       <ul className="post__widget">
                         <li>
-                          by <span>Admin</span>
+                          follow
                         </li>
-                        <li>3 min read</li>
-                        <li>20 Comment</li>
+                        <li>Likes</li>
+                    <li>20 Comments</li>
                       </ul>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua. Quis ipsum suspendisse ultrices gravida...
@@ -257,7 +254,7 @@ export const Categories = () => {
                     </Box>
                   </Box>
                   <Box className="categories__post__item">
-                    <Box className="categories__post__item__pic smaller__large set-bg" data-setbg="img/categories/categories-post/cp-7.jpg">
+                    <Box className="categories__post__item__pic smaller__large set-bg" data-setbg={require("../assets/images/r2.jpg")}>
                       <Box className="post__meta">
                         <h4>08</h4>
                         <span>Aug</span>
@@ -275,10 +272,10 @@ export const Categories = () => {
                       </h3>
                       <ul className="post__widget">
                         <li>
-                          by <span>Admin</span>
+                          follow
                         </li>
-                        <li>3 min read</li>
-                        <li>20 Comment</li>
+                        <li>Likes</li>
+                    <li>20 Comments</li>
                       </ul>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua. Quis ipsum suspendisse ultrices gravida...
@@ -290,7 +287,7 @@ export const Categories = () => {
             </Box>
             <Box className="col-lg-4 col-md-4">
               <Box className="categories__post__item">
-                <Box className="categories__post__item__pic smaller__large set-bg" data-setbg="img/categories/categories-post/cp-7.jpg">
+                <Box className="categories__post__item__pic smaller__large set-bg" data-setbg={require("../assets/images/r2.jpg")}>
                   <Box className="post__meta">
                     <h4>08</h4>
                     <span>Aug</span>
@@ -308,29 +305,29 @@ export const Categories = () => {
                   </h3>
                   <ul className="post__widget">
                     <li>
-                      by <span>Admin</span>
+                      follow
                     </li>
-                    <li>3 min read</li>
-                    <li>20 Comment</li>
+                    <li>Likes</li>
+                    <li>20 Comments</li>
                   </ul>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua. Quis ipsum suspendisse ultrices gravida...
                   </p>
                 </Box>
               </Box>
-              <Box className="categories__post__item__plain set-bg" data-setbg="img/categories/categories-post/cp-6.jpg">
+              <Box className="categories__post__item__plain set-bg" data-setbg={require("../assets/images/r2.jpg")}>
                 <Box className="categories__post__item__text">
                   <Box className="post__meta">
                     <h4>08</h4>
                     <span>Aug</span>
                   </Box>
                   <ul className="post__label--large">
-                    <li>Vegan</li>
-                    <li>Desserts</li>
+                    <li>fname</li>
+                    <li>lname</li>
                   </ul>
                   <h3>
                     <Link to="#">
-                      This Summer Snacking Cake Is theSweetest Excuse to...
+                      title
                     </Link>
                   </h3>
                   <Box className="post__social">
@@ -348,7 +345,7 @@ export const Categories = () => {
                 </Box>
               </Box>
               <Box className="categories__post__item">
-                <Box className="categories__post__item__pic small__item set-bg" data-setbg="img/categories/categories-post/cp-5.jpg">
+                <Box className="categories__post__item__pic small__item set-bg" data-setbg={require("../assets/images/r2.jpg")}>
                   <Box className="post__meta">
                     <h4>08</h4>
                     <span>Aug</span>
@@ -365,8 +362,8 @@ export const Categories = () => {
                     <li>
                       by <span>Admin</span>
                     </li>
-                    <li>3 min read</li>
-                    <li>20 Comment</li>
+                    <li>Likes</li>
+                    <li>20 Comments</li>
                   </ul>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua. Quis ipsum suspendisse ultrices gravida...
@@ -374,7 +371,7 @@ export const Categories = () => {
                 </Box>
               </Box>
               <Box className="categories__post__item">
-                <Box className="categories__post__item__pic smaller__large set-bg" data-setbg="img/categories/categories-post/cp-7.jpg">
+                <Box className="categories__post__item__pic smaller__large set-bg" data-setbg={require("../assets/images/r2.jpg")}>
                   <Box className="post__meta">
                     <h4>08</h4>
                     <span>Aug</span>

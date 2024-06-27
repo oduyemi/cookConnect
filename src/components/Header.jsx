@@ -52,8 +52,8 @@ export const Header = () => {
       <div id="mySidenav" className="sidenav" style={{ width: sidenavWidth }}>
         <button className="closebtn" onClick={closeNav}>&times;</button>
         <a className="active" href="/">Home</a>
-        <Link to="/recipe">About</Link>
         <Link to="/users">Recipes</Link>
+        <Link to="/recipe/new">Add New Recipe</Link>
       </div>
 
       <nav id="navbar" className={isSticky ? 'sticky' : ''}>

@@ -6,6 +6,8 @@ import Recipe from "../pages/Recipe";
 import Register from "../pages/Register";
 import Profile from "../pages/Profile";
 import Users from "../pages/Users";
+import RecipePost from "../pages/RecipePost";
+import MyRecipe from "../pages/MyRecipe";
 
 
 
@@ -21,6 +23,8 @@ const Navigation = () => {
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/recipe" element={<Recipe />} />
                     <Route path="/users" element={<Users />} />
+                    <Route path="/recipe/new" element={<RecipePost />} />
+                    <Route path="/recipe/my-recipe" element={<MyRecipe />} />
                     
                 </Routes>
            

@@ -18,6 +18,7 @@ export const RegisterForm = () => {
             <Box className="text-center">
                 <img src={require("../assets/images/signin.jpg")}
                     width="200px" alt="profile"
+                    className="rounded-circle"
                 />
             </Box>
 
