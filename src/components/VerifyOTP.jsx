@@ -17,7 +17,7 @@ export const VerifyOTP = () => {
     const code = verificationCode.join("");
 
     try {
-      const response = await axios.post("https://cookconnectapi.vercel.app/v1/verify", {
+      const response = await axios.post("https://cookconnectapi.vercel.app/v1/otp/verify", {
         email: "yhermii@gmail.com", 
         otp: code,
       });
