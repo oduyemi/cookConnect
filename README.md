@@ -8,7 +8,7 @@ CookConnect is a web application designed to connect cooking enthusiasts and rec
 
 - **React**: JavaScript library for building user interfaces.
 - **Material-UI (MUI)**: React components for faster and easier web development.
-- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **React-Bootstrap**: Utility-first CSS framework for styling.
 - **Animate.css**: Library for adding animations to elements.
 
 ## Features
