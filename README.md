@@ -49,7 +49,7 @@ CookConnect is a web application designed to connect cooking enthusiasts and rec
 1. Clone the repository from GitHub.
    
    ```bash
-   git clone https://github.com/your-repository.git
+   git clone https://github.com/cookConnect.git
    cd cookconnect
    ```
 
