@@ -40,7 +40,7 @@ export const LoginForm = () => {
             </Box>
             <Box className="text-center"><button type="submit" className="btn btn-success bbtn px-5 mb-5 w-100">Login</button></Box>
             <Box id="emailHelp" className="form-text text-center mb-5 text-dark">Not
-              Registered? <Link to="#" className="text-dark fw-bold puptext"> Create an
+              Registered? <Link to="/register" className="text-dark fw-bold puptext"> Create an
                 Account</Link>
             </Box>
           </form>

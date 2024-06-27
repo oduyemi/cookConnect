@@ -1,10 +1,11 @@
+import { UserDetails } from "../components/UserDetails";
 
 
 
 
 const Profile = () => {
     return(
-        <></>
+        <UserDetails />
     )
 }
 

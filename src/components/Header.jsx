@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const [sidenavWidth, setSidenavWidth] = useState('0');
@@ -50,17 +51,16 @@ export const Header = () => {
     <header className="top">
       <div id="mySidenav" className="sidenav" style={{ width: sidenavWidth }}>
         <button className="closebtn" onClick={closeNav}>&times;</button>
-        <a className="active" href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="recipes.html">Recipes</a>
-        <a href="blog.html">Blog</a>
+        <a className="active" href="/">Home</a>
+        <Link to="/recipe">About</Link>
+        <Link to="/users">Recipes</Link>
       </div>
 
       <nav id="navbar" className={isSticky ? 'sticky' : ''}>
         <div className="container">
           <div className="row">
             <div className="col-lg-4 col-xs-9">
-              <a href="index.html"><img src="images/logo.png" alt="logo" /></a>
+              <a href="/"><img src="images/logo.png" alt="logo" /></a>
             </div>
             <div className="col-lg-8 col-xs-3">
               <div className="social-icons square">
