@@ -13,3 +13,22 @@
 a{
   text-decoration: none;
 }
+
+.require {
+  color: #666;
+}
+label small {
+  color: #999;
+  font-weight: normal;
+}
+
+
+
+
+@media screen and (max-width: 768px){
+  .eye{
+    position: absolute;
+    right: 18px !important;
+  }
+}
+

@@ -86,7 +86,7 @@ export const Categories = () => {
                     <li>20 Comments</li>
                   </ul>
                   <p>
-                    Recipe content: Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint ...
+                    Recipe Description: Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint ...
                   </p>
                 </Box>
               </Box>
@@ -114,7 +114,7 @@ export const Categories = () => {
                       <li>20 Comments</li>
                       </ul>
                       <p>
-                        Recipe content: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua. Quis ipsum suspendisse ultrices gravida...
+                        Recipe Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua. Quis ipsum suspendisse ultrices gravida...
                       </p>
                     </Box>
                   </Box>
@@ -223,7 +223,7 @@ export const Categories = () => {
                           <li>20 Comments</li>
                       </ul>
                       <p>
-                        Recipe Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua. Quis ipsum suspendisse ultrices gravida...
+                        Recipe Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua. Quis ipsum suspendisse ultrices gravida...
                       </p>
                     </Box>
                   </Box>

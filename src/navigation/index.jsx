@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { UserProvider } from "../UserContext";
 import { Header } from "../components/Header";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
@@ -14,7 +15,7 @@ import MyRecipe from "../pages/MyRecipe";
 
 const Navigation = () => {
     return(
-        <>
+        <UserProvider>
             <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
@@ -28,7 +29,7 @@ const Navigation = () => {
                     
                 </Routes>
            
-        </>
+        </UserProvider>
     )
 }
 

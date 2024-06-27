@@ -1,4 +1,5 @@
 import { AllUsers } from "../components/AllUsers";
+import { SingleRecipe } from "../components/SingleRecipe";
 
 
 
@@ -8,8 +9,8 @@ import { AllUsers } from "../components/AllUsers";
 const Users = () => {
     return(
         <>
-            <AllUsers />
-            
+            <div className="mt-5 pt-5"><AllUsers /></div>
+            <SingleRecipe />
 
         </>
     )
