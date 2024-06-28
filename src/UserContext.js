@@ -21,13 +21,13 @@ export const UserProvider = ({ children }) => {
       
       if (response.status === 200 && response.data.message === "success") {
         console.log("Success:", response.data);
-        const { userID, fname, lname, email, phone, token } = response.data;
+        const { userID, firstName, lastName, email, token } = response.data;
 
         // Store user data and token in localStorage
-        localStorage.setItem("user", JSON.stringify({ userID, fname, lname, email, phone }));
+        localStorage.setItem("user", JSON.stringify({ userID, firstName, lastName, email }));
         localStorage.setItem("token", token);
 
-        setUser({ userID, fname, lname, email, phone });
+        setUser({ userID, firstName, lastName, email });
 
         setFlashMessage({
           type: "success",
