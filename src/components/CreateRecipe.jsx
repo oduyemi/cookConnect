@@ -20,12 +20,12 @@ export const CreateRecipe = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         if (!user) {
             setError("You must be logged in to create a recipe");
             return;
         }
-
+    
         const formData = new FormData();
         formData.append("title", title);
         formData.append("desc", desc);
@@ -33,15 +33,21 @@ export const CreateRecipe = () => {
         formData.append("instructions", instructions);
         formData.append("author", user.userID);
         formData.append("img", img);
-
+    
         try {
+            const token = localStorage.getItem("token");
+            if (!token) {
+                setError("Authentication token not found. Please log in.");
+                return;
+            }
+    
             const response = await axios.post("https://cookconnectapi.vercel.app/v1/recipes", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
-                    "Authorization": `Bearer ${localStorage.getItem("token")}`
+                    "Authorization": `Bearer ${token}`
                 }
             });
-
+    
             if (response.status === 201) {
                 setSuccess("Recipe created successfully!");
                 setError("");
@@ -60,7 +66,7 @@ export const CreateRecipe = () => {
             setSuccess("");
         }
     };
-
+    
     const handleCancel = (e) => {
         e.preventDefault();
         window.location.reload();
