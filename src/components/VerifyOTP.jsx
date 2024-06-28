@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { Box } from "@mui/material";
-import axios from "axios";
+import React, { useState } from 'react';
+import { Box } from '@mui/material';
+import axios from 'axios';
 
 export const VerifyOTP = () => {
-    const [email, setEmail] = useState('');
     const [otp, setOtp] = useState('');
+    const [email, setEmail] = useState(''); // Ensure email state is properly handled
     const [message, setMessage] = useState('');
 
     const handleVerifyOtp = async (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Prevent form default behavior
         try {
             const response = await axios.post('https://cookconnectapi.vercel.app/v1/otp/verify', { email, otp });
             if (response.status === 200) {
@@ -29,35 +29,25 @@ export const VerifyOTP = () => {
                     </Box>
                     <Box className="card my-5">
                         <form onSubmit={handleVerifyOtp}>
-                            <h4 className="text-center mb-4">Enter your email and code</h4>
-                            <div className="form-group mb-3">
-                                <input
-                                    type="email"
-                                    className="form-control"
-                                    placeholder="Enter your email"
-                                    required
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                />
-                            </div>
-                            <div className="form-group mb-3">
+                            <h4 className="text-center mb-4">Enter your code</h4>
+                            <div className="d-flex mb-3">
                                 <input
                                     type="text"
-                                    className="form-control"
-                                    placeholder="Enter your OTP"
                                     maxLength="6"
+                                    pattern="[0-9]{6}"
+                                    className="form-control"
+                                    onFocus={(e) => e.target.select()}
                                     required
-                                    value={otp}
-                                    onChange={(e) => setOtp(e.target.value)}
+                                    value={otp} onChange={(e) => setOtp(e.target.value)}
                                 />
                             </div>
-                            <button 
-                                type="submit" 
+                            <button
+                                type="submit"
                                 className="w-100 btn btn-success bbtn"
                             >
                                 Verify
                             </button>
-                            <p className="mt-3 text-center">{message}</p>
+                            <p>{message}</p>
                         </form>
                     </Box>
                 </Box>
