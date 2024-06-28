@@ -35,7 +35,7 @@ export const UserProvider = ({ children }) => {
             type: "success",
             message: "Login Successful. Welcome Back!",
           });
-          navigate('/recipe/my-recipe'); // Corrected navigation
+          navigate('/recipe/my-recipe'); 
         } else {
           setFlashMessage({ type: "error", message: "Invalid user data received from the server." });
         }
