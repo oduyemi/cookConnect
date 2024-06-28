@@ -4,13 +4,15 @@ import axios from 'axios';
 
 export const VerifyOTP = () => {
     const [otp, setOtp] = useState('');
-    const [email, setEmail] = useState(''); // Ensure email state is properly handled
+    const [email, setEmail] = useState(''); 
     const [message, setMessage] = useState('');
 
     const handleVerifyOtp = async (e) => {
         e.preventDefault();
+        console.log(`Verifying OTP: ${otp} for email: ${email}`); 
         try {
             const response = await axios.post('https://cookconnectapi.vercel.app/v1/otp/verify', { email, otp });
+            console.log("Response:", response);
             if (response.status === 200) {
                 setMessage('Email verification successful! Redirecting to login.');
                 setTimeout(() => {
@@ -18,6 +20,7 @@ export const VerifyOTP = () => {
                 }, 2000);
             }
         } catch (error) {
+            console.error("Error:", error); // Log the error
             setMessage('Invalid or expired OTP. Please try again.');
         }
     };
