@@ -20,7 +20,7 @@ export const CreateRecipe = () => {
                 type: "error",
                 message: "You need to login first!",
             });
-            window.location.href = "/admin/signin";
+            window.location.href = "/login";
         }
     }, [user]);
 
