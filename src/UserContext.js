@@ -19,24 +19,27 @@ export const UserProvider = ({ children }) => {
     try {
       const response = await axios.post("https://cookconnectapi.vercel.app/v1/login", { email, password });
       
-      if (response.status === 200 && response.data.message === "success") {
-        console.log("Success:", response.data);
-        const { userID, firstName, lastName, email, token } = response.data.user;
+      if (response.status === 200 && response.data.token) {
+        const { token, user } = response.data;
 
-        // Store user data and token in localStorage
-        localStorage.setItem("user", JSON.stringify({ userID, firstName, lastName, email }));
-        localStorage.setItem("token", token);
+        if (user && user.userID && user.firstName && user.lastName && user.email) {
+          // Store user data and token in localStorage
+          localStorage.setItem("user", JSON.stringify(user));
+          localStorage.setItem("token", token);
 
-        setUser({ userID, firstName, lastName, email });
+          setUser(user);
 
-        setFlashMessage({
-          type: "success",
-          message: "Login Successful. Welcome Back!",
-        });
+          setFlashMessage({
+            type: "success",
+            message: "Login Successful. Welcome Back!",
+          });
 
-        setTimeout(() => {
-          window.location.href = "/recipe/my-recipe";
-        }, 1000);
+          setTimeout(() => {
+            window.location.href = "/recipe/my-recipe";
+          }, 1000);
+        } else {
+          setFlashMessage({ type: "error", message: "Invalid user data received from the server." });
+        }
       } else if (response.status === 400) {
         console.log("Error:", response.data);
         setFlashMessage({ type: "error", message: "All fields are required!" });
