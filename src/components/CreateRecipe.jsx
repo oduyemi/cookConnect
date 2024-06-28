@@ -143,10 +143,10 @@ export const CreateRecipe = () => {
                                 <textarea rows="5" className="form-control" name="instructions" value={instructions} onChange={(e) => setInstructions(e.target.value)} required></textarea>
                             </Box>
                             <Box className="form-group mt-3 text-center">
-                                <button type="submit" className="btn btn-lg btn-success">
+                                <button type="submit" className="btn btn-lg btn-success bbtn">
                                     Create
                                 </button> &emsp;
-                                <button type="button" className="btn btn-lg bbtn" onClick={handleCancel}>
+                                <button type="button" className="btn btn-lg btn-default" onClick={handleCancel}>
                                     Cancel
                                 </button>
                             </Box>
