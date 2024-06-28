@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { UserContext } from "../UserContext";
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import axios from "axios";
 
 export const RegisterForm = () => {
+    const { handleRegister, flashMessage } = useContext(UserContext);
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-    const [flashMessage, setFlashMessage] = useState(null);
-    const [formSubmitted, setFormSubmitted] = useState(false);
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -20,40 +19,7 @@ export const RegisterForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            if (formData.password !== formData.confirmPassword) {
-                throw new Error("Both Passwords must match!");
-            }
-
-            const response = await axios.post("https://cookconnectapi.vercel.app/v1/register", formData, {
-                headers: { "Content-Type": "application/json" }
-            });
-
-            const { message, token } = response.data;
-            setFlashMessage({
-                type: "success",
-                message: message,
-            });
-
-            // Redirect to login page after registration success
-            setTimeout(() => {
-                window.location.href = "/login";
-            }, 2000);
-
-        } catch (error) {
-            console.error("Error:", error);
-
-            let errorMessage;
-            if (error.response) {
-                console.log("Response Data:", error.response.data);
-                errorMessage = error.response.data.detail || error.response.data.message;
-            } else {
-                console.error("Request Error:", error.request);
-                errorMessage = "No response received from the server. Please try again later.";
-            }
-
-            setFlashMessage({ type: "error", message: errorMessage });
-        }
+        await handleRegister(formData);
     };
 
     const toggleShowPassword = () => {
@@ -80,7 +46,6 @@ export const RegisterForm = () => {
                             <Box className="text-center">
                                 <img src={require("../assets/images/signin.jpg")} width="200px" alt="profile" className="rounded-circle" />
                             </Box>
-
                             <Box className="mb-3">
                                 <input
                                     type="text"
@@ -139,7 +104,6 @@ export const RegisterForm = () => {
                                     {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
                                 </button>
                             </Box>
-
                             <Box className="mb-3 position-relative">
                                 <input
                                     type={showConfirmPassword ? "text" : "password"}

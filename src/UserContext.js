@@ -53,6 +53,21 @@ export const UserProvider = ({ children }) => {
     }
   };
 
+  const handleRegister = async (registrationData) => {
+    try {
+        const response = await axios.post("https://cookconnectapi.vercel.app/v1/register", registrationData);
+        if (response.status === 201) {
+            setFlashMessage({
+                type: "success",
+                message: "Registration successful! Please check your email to verify your account.",
+            });
+        }
+    } catch (error) {
+        console.error("Registration Error:", error);
+        setFlashMessage({ type: "error", message: "Registration failed. Please try again later." });
+    }
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
@@ -61,7 +76,7 @@ export const UserProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider value={{ user, setUser, flashMessage, handleLogin, handleLogout }}>
+    <UserContext.Provider value={{ user, setUser, flashMessage, handleRegister, handleLogin, handleLogout }}>
       {children}
     </UserContext.Provider>
   );

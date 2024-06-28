@@ -1,4 +1,3 @@
-import { SingleRecipe } from "../components/SingleRecipe";
 import { UserRecipe } from "../components/UserRecipe";
 
 
@@ -9,8 +8,7 @@ import { UserRecipe } from "../components/UserRecipe";
 const MyRecipe = () => {
     return(
         <>
-            {/* <UserRecipe /> */}
-            <SingleRecipe />
+            <UserRecipe />
 
         </>
     )
