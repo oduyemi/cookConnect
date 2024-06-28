@@ -29,7 +29,7 @@ export const CreateRecipe = () => {
                 type: "error",
                 message: "You need to login first!",
             });
-            window.location.href = "/login";
+            window.location.href = "/admin/signin";
         } else {
             setUserDetails({
                 userID: user.userID || "",
@@ -146,7 +146,7 @@ export const CreateRecipe = () => {
                                 <button type="submit" className="btn btn-lg btn-success">
                                     Create
                                 </button> &emsp;
-                                <button type="button" className="btn btn-lg btn-default" onClick={handleCancel}>
+                                <button type="button" className="btn btn-lg bbtn" onClick={handleCancel}>
                                     Cancel
                                 </button>
                             </Box>
