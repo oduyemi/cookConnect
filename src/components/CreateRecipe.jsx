@@ -1,8 +1,7 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../UserContext"; 
 import { Box } from "@mui/material";
 import axios from "axios";
-
 
 export const CreateRecipe = () => {
     const [title, setTitle] = useState("");
@@ -13,6 +12,43 @@ export const CreateRecipe = () => {
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
     const { user } = useContext(UserContext); 
+    const [flashMessage, setFlashMessage] = useState(null);
+    const [userDetails, setUserDetails] = useState({
+        userID: "",
+        firstName: "",
+        lastName: "",
+        email: "",
+        bio: "",
+        img: "",
+        lastLogin: ""
+    });
+
+    useEffect(() => {
+        if (!user) {
+            setFlashMessage({
+                type: "error",
+                message: "You need to login first!",
+            });
+            window.location.href = "/admin/signin";
+        } else {
+            setUserDetails({
+                userID: user.userID || "",
+                firstName: user.firstName || "",
+                lastName: user.lastName || "",
+                email: user.email || "",
+                bio: user.bio || "",
+                img: user.img || "",
+                lastLogin: user.lastLogin || "",
+            });
+        }
+    }, [user]);
+
+    useEffect(() => {
+        const storedUserDetails = JSON.parse(localStorage.getItem('userDetails'));
+        if (storedUserDetails) {
+            setUserDetails(storedUserDetails);
+        }
+    }, []);
 
     const handleImageUpload = (e) => {
         setImg(e.target.files[0]);
@@ -62,7 +98,11 @@ export const CreateRecipe = () => {
                 setSuccess("");
             }
         } catch (error) {
-            setError("Error creating recipe: " + error.message);
+            if (error.response && error.response.status === 401) {
+                setError("Unauthorized: " + error.response.data.message);
+            } else {
+                setError("Error creating recipe: " + error.message);
+            }
             setSuccess("");
         }
     };
