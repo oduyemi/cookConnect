@@ -21,7 +21,7 @@ export const UserProvider = ({ children }) => {
       
       if (response.status === 200 && response.data.message === "success") {
         console.log("Success:", response.data);
-        const { userID, firstName, lastName, email, token } = response.data;
+        const { userID, firstName, lastName, email, token } = response.data.user;
 
         // Store user data and token in localStorage
         localStorage.setItem("user", JSON.stringify({ userID, firstName, lastName, email }));
