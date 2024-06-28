@@ -30,12 +30,12 @@ export const CreateRecipe = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+
         if (!user) {
             setError("You must be logged in to create a recipe");
             return;
         }
-    
+
         const formData = new FormData();
         formData.append("title", title);
         formData.append("desc", desc);
@@ -44,25 +44,20 @@ export const CreateRecipe = () => {
         formData.append("author", user.userID);
         formData.append("img", img);
 
-        // Log the form data for debugging
-        for (let [key, value] of formData.entries()) {
-            console.log(`${key}: ${value}`);
-        }
-    
         try {
             const token = localStorage.getItem("token");
             if (!token) {
                 setError("Authentication token not found. Please log in.");
                 return;
             }
-    
+
             const response = await axios.post("https://cookconnectapi.vercel.app/v1/recipes", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                     "Authorization": `Bearer ${token}`
                 }
             });
-    
+
             if (response.status === 201) {
                 setSuccess("Recipe created successfully!");
                 setError("");
@@ -85,7 +80,7 @@ export const CreateRecipe = () => {
             setSuccess("");
         }
     };
-    
+
     const handleCancel = (e) => {
         e.preventDefault();
         window.location.reload();
@@ -108,7 +103,7 @@ export const CreateRecipe = () => {
                                 <label htmlFor="title">Title <span className="require">*</span></label>
                                 <input type="text" className="form-control" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required />
                             </Box>
-                            
+
                             <Box className="form-group mb-3">
                                 <label htmlFor="desc">Description <span className="require">*</span></label>
                                 <textarea rows="5" className="form-control" name="desc" value={desc} onChange={(e) => setDesc(e.target.value)} required></textarea>
