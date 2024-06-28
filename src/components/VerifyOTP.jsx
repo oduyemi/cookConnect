@@ -31,9 +31,20 @@ export const VerifyOTP = () => {
                     <Box className="text-center mb-5 text-dark">
                         Enter the 6 digits verification code sent to your email
                     </Box>
+                    <p>{message}</p>
                     <Box className="card my-5">
                         <form onSubmit={handleVerifyOtp}>
                             <h4 className="text-center mb-4">Enter your code</h4>
+                            <div className="d-flex mb-3">
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    placeholder="Email"
+                                    required
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </div>
                             <div className="d-flex mb-3">
                                 <input
                                     type="text"
@@ -46,23 +57,12 @@ export const VerifyOTP = () => {
                                     onChange={(e) => setOtp(e.target.value)}
                                 />
                             </div>
-                            <div className="d-flex mb-3">
-                                <input
-                                    type="email"
-                                    className="form-control"
-                                    placeholder="Email"
-                                    required
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                />
-                            </div>
                             <button
                                 type="submit"
                                 className="w-100 btn btn-success bbtn"
                             >
                                 Verify
                             </button>
-                            <p>{message}</p>
                         </form>
                     </Box>
                 </Box>
