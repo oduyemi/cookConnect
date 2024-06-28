@@ -8,11 +8,14 @@ export const VerifyOTP = () => {
     const [message, setMessage] = useState('');
 
     const handleVerifyOtp = async (e) => {
-        e.preventDefault(); // Prevent form default behavior
+        e.preventDefault();
         try {
             const response = await axios.post('https://cookconnectapi.vercel.app/v1/otp/verify', { email, otp });
             if (response.status === 200) {
-                setMessage('Email verification successful! You can now log in.');
+                setMessage('Email verification successful! Redirecting to login.');
+                setTimeout(() => {
+                    window.location.href = "/login";
+                }, 2000);
             }
         } catch (error) {
             setMessage('Invalid or expired OTP. Please try again.');
@@ -38,7 +41,8 @@ export const VerifyOTP = () => {
                                     className="form-control"
                                     onFocus={(e) => e.target.select()}
                                     required
-                                    value={otp} onChange={(e) => setOtp(e.target.value)}
+                                    value={otp}
+                                    onChange={(e) => setOtp(e.target.value)}
                                 />
                             </div>
                             <button
