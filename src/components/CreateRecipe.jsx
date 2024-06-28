@@ -76,6 +76,8 @@ export const CreateRecipe = () => {
                 setError("Authentication token not found. Please log in.");
                 return;
             }
+
+            console.log("Token being sent:", token);  // Debugging: log the token
     
             const response = await axios.post("https://cookconnectapi.vercel.app/v1/recipes", formData, {
                 headers: {
