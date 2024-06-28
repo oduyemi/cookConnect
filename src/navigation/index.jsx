@@ -26,6 +26,7 @@ const Navigation = () => {
                     <Route path="/recipe" element={<Recipe />} />
                     <Route path="/users" element={<Users />} />
                     <Route path="/recipe/new" element={<RecipePost />} />
+                    <Route path="/recipe/my-recipe" element={<MyRecipe />} />
                     <Route path="/verify" element={<Verify />} />
                     
                 </Routes>
