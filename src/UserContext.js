@@ -1,9 +1,11 @@
 import React, { createContext, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
+  const navigate = useNavigate(); 
   const [flashMessage, setFlashMessage] = useState(null);
   const [user, setUser] = useState(() => {
     try {
@@ -33,10 +35,7 @@ export const UserProvider = ({ children }) => {
             type: "success",
             message: "Login Successful. Welcome Back!",
           });
-
-          setTimeout(() => {
-            window.location.href = "/recipe/my-recipe";
-          }, 1000);
+          navigate('/recipe/my-recipe'); // Corrected navigation
         } else {
           setFlashMessage({ type: "error", message: "Invalid user data received from the server." });
         }
@@ -55,16 +54,16 @@ export const UserProvider = ({ children }) => {
 
   const handleRegister = async (registrationData) => {
     try {
-        const response = await axios.post("https://cookconnectapi.vercel.app/v1/register", registrationData);
-        if (response.status === 201) {
-            setFlashMessage({
-                type: "success",
-                message: "Registration successful! Please check your email to verify your account.",
-            });
-        }
+      const response = await axios.post("https://cookconnectapi.vercel.app/v1/register", registrationData);
+      if (response.status === 201) {
+        setFlashMessage({
+          type: "success",
+          message: "Registration successful! Please check your email to verify your account.",
+        });
+      }
     } catch (error) {
-        console.error("Registration Error:", error);
-        setFlashMessage({ type: "error", message: "Registration failed. Please try again later." });
+      console.error("Registration Error:", error);
+      setFlashMessage({ type: "error", message: "Registration failed. Please try again later." });
     }
   };
 
@@ -72,7 +71,7 @@ export const UserProvider = ({ children }) => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
     setUser(null);
-    window.location.href = "/login";
+    navigate('/login'); 
   };
 
   return (

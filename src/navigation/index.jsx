@@ -10,6 +10,7 @@ import Users from "../pages/Users";
 import RecipePost from "../pages/RecipePost";
 import MyRecipe from "../pages/MyRecipe";
 import Verify from "../pages/Verify";
+import Logout from "../pages/Logout";
 
 
 
@@ -28,6 +29,7 @@ const Navigation = () => {
                     <Route path="/recipe/new" element={<RecipePost />} />
                     <Route path="/recipe/my-recipe" element={<MyRecipe />} />
                     <Route path="/verify" element={<Verify />} />
+                    <Route path="/logout" element={<Logout />} />
                     
                 </Routes>
            
