@@ -10,7 +10,7 @@ export const VerifyOTP = () => {
     const handleVerifyOtp = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://cookconnectapi.vercel.app/v1/verify/otp', { email, otp });
+            const response = await axios.post('https://cookconnectapi.vercel.app/v1/otp/verify', { email, otp });
             if (response.status === 200) {
                 setMessage('Email verification successful! You can now log in.');
             }
