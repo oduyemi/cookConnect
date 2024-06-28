@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { UserContext } from "../UserContext";
+import { UserContext } from "../UserContext"; 
 import { Box } from "@mui/material";
 import axios from "axios";
 
@@ -13,15 +13,6 @@ export const CreateRecipe = () => {
     const [success, setSuccess] = useState("");
     const { user } = useContext(UserContext); 
     const [flashMessage, setFlashMessage] = useState(null);
-    const [userDetails, setUserDetails] = useState({
-        userID: "",
-        firstName: "",
-        lastName: "",
-        email: "",
-        bio: "",
-        img: "",
-        lastLogin: ""
-    });
 
     useEffect(() => {
         if (!user) {
@@ -29,26 +20,9 @@ export const CreateRecipe = () => {
                 type: "error",
                 message: "You need to login first!",
             });
-            window.location.href = "/login";
-        } else {
-            setUserDetails({
-                userID: user.userID || "",
-                firstName: user.firstName || "",
-                lastName: user.lastName || "",
-                email: user.email || "",
-                bio: user.bio || "",
-                img: user.img || "",
-                lastLogin: user.lastLogin || "",
-            });
+            window.location.href = "/admin/signin";
         }
     }, [user]);
-
-    useEffect(() => {
-        const storedUserDetails = JSON.parse(localStorage.getItem('userDetails'));
-        if (storedUserDetails) {
-            setUserDetails(storedUserDetails);
-        }
-    }, []);
 
     const handleImageUpload = (e) => {
         setImg(e.target.files[0]);
@@ -65,10 +39,15 @@ export const CreateRecipe = () => {
         const formData = new FormData();
         formData.append("title", title);
         formData.append("desc", desc);
-        formData.append("ingredients", ingredients.split(","));
+        formData.append("ingredients", ingredients);
         formData.append("instructions", instructions);
         formData.append("author", user.userID);
         formData.append("img", img);
+
+        // Log the form data for debugging
+        for (let [key, value] of formData.entries()) {
+            console.log(`${key}: ${value}`);
+        }
     
         try {
             const token = localStorage.getItem("token");
@@ -76,8 +55,6 @@ export const CreateRecipe = () => {
                 setError("Authentication token not found. Please log in.");
                 return;
             }
-
-            console.log("Token being sent:", token);  // Debugging: log the token
     
             const response = await axios.post("https://cookconnectapi.vercel.app/v1/recipes", formData, {
                 headers: {
@@ -100,10 +77,10 @@ export const CreateRecipe = () => {
                 setSuccess("");
             }
         } catch (error) {
-            if (error.response && error.response.status === 401) {
-                setError("Unauthorized: " + error.response.data.message);
+            if (error.response) {
+                setError(`Error creating recipe: ${error.response.data.message}`);
             } else {
-                setError("Error creating recipe: " + error.message);
+                setError(`Error creating recipe: ${error.message}`);
             }
             setSuccess("");
         }
